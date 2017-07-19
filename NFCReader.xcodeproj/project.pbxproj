@@ -12,6 +12,7 @@
 		005277B41F17AADE004E77F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005277B21F17AADE004E77F8 /* Main.storyboard */; };
 		005277B61F17AADE004E77F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005277B51F17AADE004E77F8 /* Assets.xcassets */; };
 		005277B91F17AADE004E77F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005277B71F17AADE004E77F8 /* LaunchScreen.storyboard */; };
+		005277C11F17AB8A004E77F8 /* NFCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005277C01F17AB8A004E77F8 /* NFCHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		005277B51F17AADE004E77F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		005277B81F17AADE004E77F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		005277BA1F17AADE004E77F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		005277C01F17AB8A004E77F8 /* NFCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCHelper.swift; sourceTree = "<group>"; };
+		005277C21F17AFF8004E77F8 /* NFCReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NFCReader.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +57,14 @@
 		005277AD1F17AADE004E77F8 /* NFCReader */ = {
 			isa = PBXGroup;
 			children = (
+				005277C21F17AFF8004E77F8 /* NFCReader.entitlements */,
 				005277AE1F17AADE004E77F8 /* AppDelegate.swift */,
 				005277B01F17AADE004E77F8 /* ViewController.swift */,
 				005277B21F17AADE004E77F8 /* Main.storyboard */,
 				005277B51F17AADE004E77F8 /* Assets.xcassets */,
 				005277B71F17AADE004E77F8 /* LaunchScreen.storyboard */,
 				005277BA1F17AADE004E77F8 /* Info.plist */,
+				005277C01F17AB8A004E77F8 /* NFCHelper.swift */,
 			);
 			path = NFCReader;
 			sourceTree = "<group>";
@@ -96,6 +101,11 @@
 				TargetAttributes = {
 					005277AA1F17AADE004E77F8 = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -136,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				005277B11F17AADE004E77F8 /* ViewController.swift in Sources */,
+				005277C11F17AB8A004E77F8 /* NFCHelper.swift in Sources */,
 				005277AF1F17AADE004E77F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCReader/NFCReader.entitlements;
 				DEVELOPMENT_TEAM = 79W842HGGV;
 				INFOPLIST_FILE = NFCReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -287,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCReader/NFCReader.entitlements;
 				DEVELOPMENT_TEAM = 79W842HGGV;
 				INFOPLIST_FILE = NFCReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
